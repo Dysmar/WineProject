@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import seaborn as sns
+# import seaborn as sns
 import warnings
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
