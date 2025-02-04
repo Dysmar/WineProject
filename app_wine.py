@@ -34,7 +34,55 @@ with tab1:
         </div>
         """, unsafe_allow_html=True
     )
-    st.title("Bienvenidos a CatemosVino 🍷")
+    
+    # Título principal
+    st.title("🍷 Descubre el Sabor de España con CatemosVino")
+
+    # Descripción
+    st.markdown(
+    """
+    ### Conectamos bodegas con mercados internacionales
+    En **CatemosVino**, llevamos la esencia del vino español al mundo. Somos una empresa especializada en la exportación de vinos con **Denominación de Origen**, 
+    conectando bodegas excepcionales con mercados internacionales en busca de calidad y autenticidad.
+    
+    Si eres una bodega que busca expandir sus horizontes y llevar sus vinos a nuevos mercados, estamos aquí para hacerlo posible. 
+    Nuestro equipo de expertos en exportación y distribución trabaja con una red global de importadores, distribuidores y amantes del vino, 
+    asegurando que cada botella encuentre su destino perfecto.
+    """
+)
+
+    # Beneficios
+    st.subheader("🍇 ¿Por qué elegir CatemosVino?")
+    benefits = [
+    "✅ Especialización en vinos con Denominación de Origen",
+    "✅ Acceso a mercados internacionales estratégicos",
+    "✅ Asesoramiento personalizado en exportación",
+    "✅ Red global de compradores y distribuidores",
+]
+    st.write("\n".join(benefits))
+
+    # Llamado a la acción
+    st.markdown(
+    """
+    ---
+    ### 🚀 Únete a nosotros y lleva la riqueza del vino español más allá de nuestras fronteras
+    **Conversemos sobre cómo hacer crecer tu bodega juntos.**
+    
+    📩 **Contáctanos hoy y descubre nuevas oportunidades de exportación.**
+    """
+)
+
+    # Formulario de contacto
+    st.subheader("📩 Contáctanos")
+    with st.form("contact_form"):
+        name = st.text_input("Nombre de la Bodega o Contacto")
+        email = st.text_input("Correo Electrónico")
+        message = st.text_area("Mensaje")
+        submit_button = st.form_submit_button("Enviar Consulta")
+    
+    if submit_button:
+        st.success("¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.")
+    
     st.markdown("### Explorando el mundo del vino con pasión y calidad.")
 
     st.subheader("Nuestros tipos de vinos")
