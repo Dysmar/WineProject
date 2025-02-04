@@ -81,33 +81,7 @@ with tab1:
         submit_button = st.form_submit_button("Enviar Consulta")
     
     if submit_button:
-        st.success("¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.")
-    
-    st.markdown("### Explorando el mundo del vino con pasión y calidad.")
-    image_foot_t1 = 'https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/logo_catemosvino.png'
-    st.markdown(
-        f"""
-        <style>
-        .image-container {{
-            position: relative;
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-        }}
-        .image-container img {{
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 10px;
-        }}
-
-        </style>
-        <div class="image-container">
-            <img src="{image_foot_t1}" alt="Nuestros Vinos, descubrelo en la seccion de Vinos" title="Nuestros Vinos, descubrelo en la seccion de Vinos">
-        </div>
-        """, unsafe_allow_html=True
-    )
-    
+        st.success("¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.")    
 
 with tab2:
     st.title("Quiénes Somos")
@@ -379,4 +353,28 @@ with tab5:
     st.markdown('</div>', unsafe_allow_html=True)
 # Pie de página
 st.markdown("---")
+st.markdown("### Explorando el mundo del vino con pasión y calidad.")
+image_foot_t1 = 'https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/nuestros_vinos.png'
+st.markdown(
+        f"""
+        <style>
+        .image-container {{
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }}
+        .image-container img {{
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }}
+
+        </style>
+        <div class="image-container">
+            <img src="{image_foot_t1}" alt="Nuestros Vinos, descubrelo en la seccion de Vinos" title="Nuestros Vinos, descubrelo en la seccion de Vinos">
+        </div>
+        """, unsafe_allow_html=True
+)
 st.markdown("📌 *CatemosVino - Exportación de vinos de calidad.*")
