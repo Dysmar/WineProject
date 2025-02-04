@@ -176,7 +176,7 @@ with tab3:
 
 with tab4:
     # definimos una imagen y sobreponemos un titulo
-    image_bww = 'https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/feria_bww.png'
+    image_bww = 'https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/feria_bww-t.png'
     #titular = "🍷 La Importancia de las Ferias del Vino en la Exportación Española"
 
     # Usamos HTML y CSS
