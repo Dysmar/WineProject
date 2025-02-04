@@ -10,23 +10,30 @@ st.set_page_config(page_title="CatemosVino", page_icon="🍷", layout="wide")
 tabs = ["Inicio", "Quiénes Somos", "Qué Ofrecemos", "Ferias", "Nuestros Vinos"]
 tab1, tab2, tab3, tab4, tab5 = st.tabs(tabs)
 
-# Función para cargar y redimensionar el logo
-def cargar_logo(ruta, width=250):
-    try:
-        logo = Image.open(ruta)
-        aspect_ratio = logo.height / logo.width
-        height = int(width * aspect_ratio)
-        logo = logo.resize((width, height))
-        return logo
-    except FileNotFoundError:
-        st.warning("⚠️ No se encontró el archivo del logo.")
-        return None
-
 with tab1:
-    logo = cargar_logo("data/img/logo_catemosvino.png", width=500)
-    if logo:
-        st.image(logo, use_container_width=False)
+    image_logob = 'https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/logo_catemosvino.png'
+    st.markdown(
+        f"""
+        <style>
+        .image-container {{
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }}
+        .image-container img {{
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }}
 
+        </style>
+        <div class="image-container">
+            <img src="{image_logob}" alt="WWB: Feria de Vino" title="CatemosVino Banner">
+        </div>
+        """, unsafe_allow_html=True
+    )
     st.title("Bienvenidos a CatemosVino 🍷")
     st.markdown("### Explorando el mundo del vino con pasión y calidad.")
 
@@ -108,9 +115,9 @@ with tab3:
     st.title("Qué Ofrecemos")
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        logo = cargar_logo("data/img/mundo.png", width=500)
-        if logo:
-            st.image(logo, use_container_width=False)
+        mundo = "data/img/mundo.png"
+        if mundo:
+            st.image(mundo, use_container_width=False)
     st.markdown("""
                 En **CatemosVino** nos apasiona el mundo del vino y por ello ofrecemos una selecta gama de vinos españoles de alta calidad, procedentes de bodegas dirigidas por productores y enólogos comprometidos con la excelencia. Nuestro catálogo está cuidadosamente elaborado, incluyendo proyectos de pequeña y mediana escala, así como vinos de edición limitada, donde cada etiqueta refleja la esencia de una tierra, la dedicación de familias y un arraigo que se transmite en cada sorbo.
 
@@ -120,8 +127,47 @@ with tab3:
     """)
 
 with tab4:
-    st.title("🍷 La Importancia de las Ferias del Vino en la Exportación Española")
-    st.image("data/img/feria_bww.png", use_container_width=True)
+    # definimos una imagen y sobreponemos un titulo
+    image_bww = 'https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/feria_bww.png'
+    titular = "🍷 La Importancia de las Ferias del Vino en la Exportación Española"
+
+    # Usamos HTML y CSS
+    st.markdown(
+        f"""
+        <style>
+        .image-container {{
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }}
+        .image-container img {{
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }}
+        .overlay-text {{
+            position: relative;
+            top: 0%;
+            left: 15%;
+            transform: translate(-15%, -750%);
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 0px 0;
+            text-align: center;
+            border-radius: 10px;
+        }}
+        </style>
+        <div class="image-container">
+            <img src="{image_bww}" alt="WWB: Feria de Vino" title="Feria de Vino">
+            <div class="overlay-text">{titular}
+        </div>
+        """, unsafe_allow_html=True
+    )
+
     st.markdown("""
 Las ferias del vino son **eventos clave para la internacionalización del vino español**, ya que permiten a las bodegas presentar sus productos, establecer contactos comerciales y expandirse a nuevos mercados globales.
 
