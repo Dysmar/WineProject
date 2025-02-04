@@ -177,7 +177,7 @@ with tab3:
 with tab4:
     # definimos una imagen y sobreponemos un titulo
     image_bww = 'https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/feria_bww.png'
-    titular = "🍷 La Importancia de las Ferias del Vino en la Exportación Española"
+    #titular = "🍷 La Importancia de las Ferias del Vino en la Exportación Española"
 
     # Usamos HTML y CSS
     st.markdown(
@@ -211,7 +211,6 @@ with tab4:
         </style>
         <div class="image-container">
             <img src="{image_bww}" alt="WWB: Feria de Vino" title="Feria de Vino">
-            <div class="overlay-text">{titular}
         </div>
         """, unsafe_allow_html=True
     )
