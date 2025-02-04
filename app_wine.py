@@ -84,34 +84,30 @@ with tab1:
         st.success("¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.")
     
     st.markdown("### Explorando el mundo del vino con pasión y calidad.")
+    image_foot_t1 = 'https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/logo_catemosvino.png'
+    st.markdown(
+        f"""
+        <style>
+        .image-container {{
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }}
+        .image-container img {{
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }}
 
-    st.subheader("Nuestros tipos de vinos")
-    col1, col2, col3, col4 = st.columns(4)
-
-    categorias_vinos = {
-        "Vino Blanco": "data/img/vino_blanco.png",
-        "Vino Tinto": "data/img/vino_tinto.png",
-        "Vino Rosado": "data/img/vino_rosado.png",
-        "Cava / Espumoso": "data/img/vino_cava.png"
-    }
-
-    def cargar_icono(ruta, width=80):
-        try:
-            icono = Image.open(ruta)
-            aspect_ratio = icono.height / icono.width
-            height = int(width * aspect_ratio)
-            icono = icono.resize((width, height))
-            return icono
-        except FileNotFoundError:
-            return None
-
-    for col, (nombre, icono) in zip([col1, col2, col3, col4], categorias_vinos.items()):
-        img = cargar_icono(icono)
-        if img:
-            col.image(img)
-        else:
-            col.warning(f"⚠️ No se encontró el icono para {nombre}")
-        col.markdown(f"**{nombre}**")
+        </style>
+        <div class="image-container">
+            <img src="{image_foot_t1}" alt="Nuestros Vinos, descubrelo en la seccion de Vinos" title="Nuestros Vinos, descubrelo en la seccion de Vinos">
+        </div>
+        """, unsafe_allow_html=True
+    )
+    
 
 with tab2:
     st.title("Quiénes Somos")
