@@ -280,27 +280,60 @@ La Barcelona Wine Week es una feria emergente que se ha consolidado como una pla
 """)
 
 with tab5:
-    st.title("Nuestros Vinos D.O.")
+    st.title("Nuestros Vinos Españoles D.O.")
+
+    # Cargar datos desde el CSV
     df = pd.read_csv('data/webs_vinos.csv')
 
-    num_filas = 34
+    # Número de columnas por fila
     num_columnas = 3
-    chunks = [df.iloc[i:i+num_filas] for i in range(0, len(df), num_filas)]
 
-    for chunk in chunks:
-        cols = st.columns(num_columnas)
-        for i, (idx, row) in enumerate(chunk.iterrows()):
-            col = cols[i % num_columnas]
-            with col:
-                st.markdown(
-                    f"""
+    # Crear una lista de columnas
+    columnas = st.columns(num_columnas)
+
+    # CSS para mejorar la presentación
+    st.markdown("""
+        <style>
+            .image-card {
+                text-align: center;
+                background: #f9f9f9;
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+                margin-bottom: 20px;
+            }
+            .image-card img {
+                width: 100%;
+                max-width: 170px;
+                height: auto;
+                border-radius: 5px;
+            }
+            .image-card a {
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+                display: block;
+                margin-top: 5px;
+            }
+        </style>
+    """, unsafe_allow_html=True)
+
+    # Mostrar las imágenes distribuidas en 3 columnas
+    for i, (idx, row) in enumerate(df.iterrows()):
+        col = columnas[i % num_columnas]  # Distribuir en columnas uniformemente
+        with col:
+            st.markdown(
+                f"""
+                <div class="image-card">
                     <a href="{row['Web']}" target="_blank">
-                    <img src="{row['Imagen']}" alt="{row['Nombre']}" title="{row['Nombre']}" style="width: 100%; max-width: 170px; height: auto; display: block; margin: auto;">
+                        <img src="{row['Imagen']}" alt="{row['Nombre']}" title="{row['Nombre']}">
+                        <div>{row['Nombre']}</div>
                     </a>
-                    """, unsafe_allow_html=True
-                )
-                st.markdown("---")
+                </div>
+                """, unsafe_allow_html=True
+            )
 
+    st.markdown('</div>', unsafe_allow_html=True)
 # Pie de página
 st.markdown("---")
 st.markdown("📌 *CatemosVino - Exportación de vinos de calidad.*")
