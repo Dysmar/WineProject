@@ -353,6 +353,29 @@ with tab5:
     st.markdown('</div>', unsafe_allow_html=True)
 
 with tab6:
+    image_EDA = 'https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/EDA_banner.png'
+    st.markdown(
+        f"""
+        <style>
+        .image-container {{
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }}
+        .image-container img {{
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }}
+
+        </style>
+        <div class="image-container">
+            <img src="{image_EDA}" alt="Nuestros Vinos, descubrelo en la seccion de Vinos" title="Nuestros Vinos, descubrelo en la seccion de Vinos">
+        </div>
+        """, unsafe_allow_html=True
+    )
     
 # Estilos personalizados para las imágenes
     st.markdown("""
