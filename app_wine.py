@@ -364,7 +364,7 @@ with tab6:
     st.markdown(
         """
         <div style="display: flex; justify-content: center;">
-            <img src="data/img/produccion.png" alt="Producción de Vino">
+            <img src="https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/produccion.png" alt="Producción de Vino">
         </div>
         """, unsafe_allow_html=True
     )
@@ -377,7 +377,7 @@ with tab6:
     st.markdown(
         """
         <div style="display: flex; justify-content: center;">
-            <img src="data/img/consumo.png" alt="Producción de Vino">
+            <img src="https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/consumo.png" alt="Producción de Vino">
         </div>
         """, unsafe_allow_html=True
     )
@@ -390,7 +390,7 @@ with tab6:
     st.markdown(
         """
         <div style="display: flex; justify-content: center;">
-            <img src="data/img/exportacion.png" alt="Producción de Vino">
+            <img src="https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/exportacion.png" alt="Producción de Vino">
         </div>
         """, unsafe_allow_html=True
     )
@@ -403,7 +403,7 @@ with tab6:
     st.markdown(
         """
         <div style="display: flex; justify-content: center;">
-            <img src="data/img/importacion.png" alt="Producción de Vino">
+            <img src="https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/importacion.png" alt="Producción de Vino">
         </div>
         """, unsafe_allow_html=True
     )
