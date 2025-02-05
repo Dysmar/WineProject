@@ -353,76 +353,100 @@ with tab5:
     st.markdown('</div>', unsafe_allow_html=True)
 
 with tab6:
-    st.title("📊 Exploratory Data Analysis (EDA) - Producción y Consumo de Vino")
+    
+# Estilos personalizados para las imágenes
+    st.markdown("""
+    <style>
+        .image-card2 {
+            text-align: center;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .image-card2:hover {
+            transform: scale(1.0);
+        }
+        .image-card2 img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            border-radius: 8px;
+        }
+        .image-title2 {
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
-    # Descripción general
+with st.container():
+    st.title("📊 Exploratory Data Analysis (EDA)")
+
     st.markdown("""
     Este análisis explora la **producción, consumo, exportación e importación de vino** en diferentes países.  
     Se destacan las principales tendencias observadas en los datos.
-""")
+    """)
+
+    # Función para mostrar imágenes con estilo
+    def show_image_card(img_url, title):
+        st.markdown(
+            f"""
+            <div class="image-card2">
+                <img src="{img_url}" alt="{title}">
+                <div class="image-title2">{title}</div>
+            </div>
+            """, unsafe_allow_html=True
+        )
+
+    # Sección de Producción
     st.subheader("📌 Producción de Vino por País")
-    st.markdown(
-        """
-        <div style="display: flex; justify-content: center;">
-            <img src="https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/produccion.png" alt="Producción de Vino">
-        </div>
-        """, unsafe_allow_html=True
-    )
+    show_image_card("https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/produccion.png", 
+                    "Producción de Vino")
     st.markdown("""
     - **Italia, España y Francia** son los mayores productores de vino.  
     - La producción de vino es relativamente estable debido a las características de la viticultura.
     """)
 
+    # Sección de Consumo
     st.subheader("🍷 Consumo de Vino por País")
-    st.markdown(
-        """
-        <div style="display: flex; justify-content: center;">
-            <img src="https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/consumo.png" alt="Producción de Vino">
-        </div>
-        """, unsafe_allow_html=True
-    )
+    show_image_card("https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/consumo.png", 
+                    "Consumo de Vino")
     st.markdown("""
     - **Estados Unidos** es el mayor consumidor de vino a nivel mundial.  
     - El consumo de vino está más distribuido en comparación con la producción.
     """)
 
+    # Sección de Exportación
     st.subheader("🚢 Exportación de Vino por País")
-    st.markdown(
-        """
-        <div style="display: flex; justify-content: center;">
-            <img src="https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/exportacion.png" alt="Producción de Vino">
-        </div>
-        """, unsafe_allow_html=True
-    )
+    show_image_card("https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/exportacion.png", 
+                    "Exportación de Vino")
     st.markdown("""
     - **España e Italia** lideran la exportación de vino.  
     - Francia también exporta, pero en menor cantidad.
     """)
 
+    # Sección de Importación
     st.subheader("📦 Importación de Vino por País")
-    st.markdown(
-        """
-        <div style="display: flex; justify-content: center;">
-            <img src="https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/importacion.png" alt="Producción de Vino">
-        </div>
-        """, unsafe_allow_html=True
-    )
+    show_image_card("https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/importacion.png", 
+                    "Importación de Vino")
     st.markdown("""
     - **Estados Unidos, Reino Unido y Alemania** son los principales importadores de vino.  
     - Francia, a pesar de ser un gran exportador, también importa vino.
     """)
 
-    st.subheader("📦 Exportaciónes de España a otros Paises")
-    st.markdown(
-        """
-        <div style="display: flex; justify-content: center;">
-            <img src="https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/exportaciones_DOP.png" alt="Producción de Vino">
-        </div>
-        """, unsafe_allow_html=True
-    )
+    # Sección de Exportaciones de España
+    st.subheader("📦 Exportaciones de España a otros Países")
+    show_image_card("https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/exportaciones_DOP.png", 
+                    "Exportaciones de España")
     st.markdown("""
-    - **Reino Unido, Alemanis y Estados Unidos** son los principales paises a donde exportamos.  
+    - **Reino Unido, Alemania y Estados Unidos** son los principales destinos de exportación de España.  
     """)
+
 
 with tab7:
     powerbi_utl = 'https://app.powerbi.com/view?r=eyJrIjoiOTZiOGIwMzItN2VlOC00YmQ5LTllYjItMTY2OTJjOTRhNDJkIiwidCI6IjhhZWJkZGI2LTM0MTgtNDNhMS1hMjU1LWI5NjQxODZlY2M2NCIsImMiOjl9&pageName=517520207b6e9083ca82'
