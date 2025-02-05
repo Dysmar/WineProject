@@ -7,8 +7,8 @@ import pandas as pd
 st.set_page_config(page_title="CatemosVino", page_icon="🍷", layout="wide")
 
 # Navegación por pestañas
-tabs = ["Inicio", "Quiénes Somos", "Qué Ofrecemos", "Ferias", "Nuestros Vinos", "PowerBI"]
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(tabs)
+tabs = ["Inicio", "Quiénes Somos", "Qué Ofrecemos", "Ferias", "Nuestros Vinos", "EDA", "PowerBI"]
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(tabs)
 
 with tab1:
     image_logob = 'https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/logo_catemosvino.png'
@@ -353,6 +353,66 @@ with tab5:
     st.markdown('</div>', unsafe_allow_html=True)
 
 with tab6:
+    st.title("📊 Exploratory Data Analysis (EDA) - Producción y Consumo de Vino")
+
+    # Descripción general
+    st.markdown("""
+    Este análisis explora la **producción, consumo, exportación e importación de vino** en diferentes países.  
+    Se destacan las principales tendencias observadas en los datos.
+""")
+    st.subheader("📌 Producción de Vino por País")
+    st.markdown(
+        """
+        <div style="display: flex; justify-content: center;">
+            <img src="data/img/produccion.png" alt="Producción de Vino">
+        </div>
+        """, unsafe_allow_html=True
+    )
+    st.markdown("""
+    - **Italia, España y Francia** son los mayores productores de vino.  
+    - La producción de vino es relativamente estable debido a las características de la viticultura.
+    """)
+
+    st.subheader("🍷 Consumo de Vino por País")
+    st.markdown(
+        """
+        <div style="display: flex; justify-content: center;">
+            <img src="data/img/consumo.png" alt="Producción de Vino">
+        </div>
+        """, unsafe_allow_html=True
+    )
+    st.markdown("""
+    - **Estados Unidos** es el mayor consumidor de vino a nivel mundial.  
+    - El consumo de vino está más distribuido en comparación con la producción.
+    """)
+
+    st.subheader("🚢 Exportación de Vino por País")
+    st.markdown(
+        """
+        <div style="display: flex; justify-content: center;">
+            <img src="data/img/exportacion.png" alt="Producción de Vino">
+        </div>
+        """, unsafe_allow_html=True
+    )
+    st.markdown("""
+    - **España e Italia** lideran la exportación de vino.  
+    - Francia también exporta, pero en menor cantidad.
+    """)
+
+    st.subheader("📦 Importación de Vino por País")
+    st.markdown(
+        """
+        <div style="display: flex; justify-content: center;">
+            <img src="data/img/importacion.png" alt="Producción de Vino">
+        </div>
+        """, unsafe_allow_html=True
+    )
+    st.markdown("""
+    - **Estados Unidos, Reino Unido y Alemania** son los principales importadores de vino.  
+    - Francia, a pesar de ser un gran exportador, también importa vino.
+    """)
+
+with tab7:
     powerbi_utl = 'https://app.powerbi.com/view?r=eyJrIjoiOTZiOGIwMzItN2VlOC00YmQ5LTllYjItMTY2OTJjOTRhNDJkIiwidCI6IjhhZWJkZGI2LTM0MTgtNDNhMS1hMjU1LWI5NjQxODZlY2M2NCIsImMiOjl9&pageName=517520207b6e9083ca82'
     st.markdown(
         f"""
