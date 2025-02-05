@@ -412,6 +412,18 @@ with tab6:
     - Francia, a pesar de ser un gran exportador, también importa vino.
     """)
 
+    st.subheader("📦 Exportaciónes de España a otros Paises")
+    st.markdown(
+        """
+        <div style="display: flex; justify-content: center;">
+            <img src="https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/exportaciones_DOP.png" alt="Producción de Vino">
+        </div>
+        """, unsafe_allow_html=True
+    )
+    st.markdown("""
+    - **Reino Unido, Alemanis y Estados Unidos** son los principales paises a donde exportamos.  
+    """)
+
 with tab7:
     powerbi_utl = 'https://app.powerbi.com/view?r=eyJrIjoiOTZiOGIwMzItN2VlOC00YmQ5LTllYjItMTY2OTJjOTRhNDJkIiwidCI6IjhhZWJkZGI2LTM0MTgtNDNhMS1hMjU1LWI5NjQxODZlY2M2NCIsImMiOjl9&pageName=517520207b6e9083ca82'
     st.markdown(
