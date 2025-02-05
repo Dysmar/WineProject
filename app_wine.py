@@ -354,7 +354,13 @@ with tab5:
 
 with tab6:
     powerbi_utl = 'https://app.powerbi.com/view?r=eyJrIjoiOTZiOGIwMzItN2VlOC00YmQ5LTllYjItMTY2OTJjOTRhNDJkIiwidCI6IjhhZWJkZGI2LTM0MTgtNDNhMS1hMjU1LWI5NjQxODZlY2M2NCIsImMiOjl9&pageName=517520207b6e9083ca82'
-    st.components.v1.iframe(powerbi_utl, width=800, height=636)
+    st.markdown(
+        f"""
+        <div style="display: flex; justify-content: center;">
+            <iframe src="{powerbi_utl}" width="1024" height="612" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+        """, unsafe_allow_html=True
+    )
     
 
 # Pie de página
