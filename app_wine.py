@@ -7,8 +7,8 @@ import pandas as pd
 st.set_page_config(page_title="CatemosVino", page_icon="🍷", layout="wide")
 
 # Navegación por pestañas
-tabs = ["Inicio", "Quiénes Somos", "Qué Ofrecemos", "Ferias", "Nuestros Vinos"]
-tab1, tab2, tab3, tab4, tab5 = st.tabs(tabs)
+tabs = ["Inicio", "Quiénes Somos", "Qué Ofrecemos", "Ferias", "Nuestros Vinos", "PowerBI"]
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(tabs)
 
 with tab1:
     image_logob = 'https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/logo_catemosvino.png'
@@ -351,6 +351,11 @@ with tab5:
             )
 
     st.markdown('</div>', unsafe_allow_html=True)
+
+with tab6:
+    powerbi_utl = 'https://app.powerbi.com/view?r=eyJrIjoiOTZiOGIwMzItN2VlOC00YmQ5LTllYjItMTY2OTJjOTRhNDJkIiwidCI6IjhhZWJkZGI2LTM0MTgtNDNhMS1hMjU1LWI5NjQxODZlY2M2NCIsImMiOjl9&pageName=517520207b6e9083ca82'
+    st.components.v1.iframe(powerbi_utl, height=1024)
+
 # Pie de página
 st.markdown("---")
 st.markdown("### Explorando el mundo del vino con pasión y calidad.")
