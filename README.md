@@ -6,7 +6,7 @@
 CatemosVino es una solución analítica diseñada para optimizar la comercialización del vino español en mercados nacionales e internacionales. Utilizando herramientas de análisis de datos, inteligencia de negocios y modelos predictivos, este proyecto proporciona información estratégica basada en datos para mejorar la toma de decisiones en el sector vinícola.
 
 ## Objetivo
-El objetivo principal de este proyecto es el desarrollo de una API llamada **"CatemosVino"**, que integra datos de diversas fuentes oficiales y proporciona insights clave sobre la evolución del mercado vinícola.
+El objetivo principal de este proyecto es el desarrollo de una APP/EndPoint Azure llamada **"CatemosVino"**, que integra datos de diversas fuentes oficiales y proporciona insights clave sobre la evolución del mercado vinícola.
 
 ## Funcionalidades Principales
 - **Integración de Datos:** Incorporación de información de la Organización Internacional de la Viña y el Vino (OIV) y del Instituto de Viticultores de España (INFOVI).
@@ -21,7 +21,7 @@ CatemosVino/                  # Aplicación web en Streamlit
 │-- data/                    # Archivos de datos crudos y procesados
 │-- EDA/               # Jupyter Notebooks para análisis EDA y Machine Learning
 │-- PowerBI/              # Dashboards desarrollados en Power BI
-│-- ML/                     # Código de la API "CatemosVino"
+│-- ML/                     # Código de la APP/EndPoint Azure "CatemosVino"
 │-- README.md                # Documentación principal del repositorio
 ```
 
@@ -76,9 +76,9 @@ Para realizar el EDA, se han utilizado los siguientes archivos CSV:
 
 Este proyecto presenta un análisis detallado del mercado del vino español con Denominación de Origen Protegida (DOP), utilizando dashboards interactivos en **Power BI**.  
 
-## Creación de una API Predictiva con Machine Learning en Azure
+## Creación de una APP/EndPoint Azure Predictiva con Machine Learning en Azure
 
-Se ha desarrollado una API en Azure Machine Learning para optimizar la comercialización internacional del vino DOP. La API estima el precio de exportación considerando país destino, hábitos de consumo y características de la DOP.
+Se ha desarrollado una APP/EndPoint Azure en Azure Machine Learning para optimizar la comercialización internacional del vino DOP. La APP/EndPoint Azure estima el precio de exportación considerando país destino, hábitos de consumo y características de la DOP.
 
 ### **Pasos Clave en el Desarrollo**
 1. **Diseño e Implementación del Modelo**
@@ -89,13 +89,13 @@ Se ha desarrollado una API en Azure Machine Learning para optimizar la comercial
 2. **Optimización con AutoML**
    - Selección automática del mejor modelo.
    - Uso de `VotingEnsemble` para mejorar la precisión.
-   - Exposición de la API a través de un endpoint en Azure.
+   - Exposición de la APP/EndPoint Azure a través de un endpoint en Azure.
 
 3. **Desarrollo de una Herramienta de Selección de DOP**
    - Creación de un modelo adicional para recomendar la DOP más adecuada.
    - Implementación de `ExtremeRandomTrees` con una exactitud del 80%.
 
-4. **Beneficios de la API Predictiva**
+4. **Beneficios de la APP/EndPoint Azure Predictiva**
    - Optimiza la fijación de precios.
    - Identifica oportunidades de exportación.
    - Automatiza la toma de decisiones comerciales.
