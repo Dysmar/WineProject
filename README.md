@@ -1,3 +1,5 @@
+![CatemosVino](https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/logo_catemosvino.png)
+
 # CatamosVino - Análisis y Predicción del Mercado Vinícola
 
 ## Descripción del Proyecto
@@ -21,7 +23,7 @@ CatamosVino/                  # Aplicación web en Streamlit
 │-- PowerBI/              # Dashboards desarrollados en Power BI
 │-- ML/                     # Código de la API "CatamosVino"
 │-- README.md                # Documentación principal del repositorio
-
+```
 
 ## Requisitos
 Para ejecutar este proyecto, se necesitan las siguientes herramientas y librerías:
@@ -30,33 +32,17 @@ Para ejecutar este proyecto, se necesitan las siguientes herramientas y librerí
 - Power BI (para visualización interactiva)
 - Azure Machine Learning SDK (para modelos predictivos)
 - Streamlit (para la interfaz web)
-- FastAPI (para la implementación de la API)
 
-## Instalación y Uso
+## Uso
 
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/tu-usuario/CatamosVino.git
-   cd CatamosVino
-   ```
-2. Instalar las dependencias:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Ejecutar la aplicación web en Streamlit:
-   ```bash
-   streamlit run web_app/app.py
-   ```
-4. Para iniciar la API con FastAPI:
-   ```bash
-   uvicorn api.main:app --reload
-   ```
+1. Clonar el repositorio
+2. Acceder a la web: https://catemosvinos.streamlit.app
 
 ## Equipo de Desarrollo
-- **Expositor 1:** Introducción y presentación del proyecto, integración de Streamlit.
-- **Expositor 2:** Análisis exploratorio de datos (EDA) con Python.
-- **Expositor 3:** Evaluación del mercado con visualización en Power BI.
-- **Expositor 4:** Creación y despliegue de modelos predictivos en Azure Machine Learning.
+- **Francesco:** Introducción y presentación del proyecto, integración de Streamlit.
+- **Gino:** Análisis exploratorio de datos (EDA) con Python.
+- **Dysmar:** Evaluación del mercado con visualización en Power BI.
+- **Juan:** Creación y despliegue de modelos predictivos en Azure Machine Learning.
 
 ## Análisis de Datos
 
@@ -86,6 +72,10 @@ Para realizar el EDA, se han utilizado los siguientes archivos CSV:
 - Validación de la unificación con `shape`, `head()`, `unique()`.
 - Creación del archivo final `dfvino_unido.csv`.
 
+## Análisis del Mercado del Vino Español con Power BI
+
+Este proyecto presenta un análisis detallado del mercado del vino español con Denominación de Origen Protegida (DOP), utilizando dashboards interactivos en **Power BI**.  
+
 ## Creación de una API Predictiva con Machine Learning en Azure
 
 Se ha desarrollado una API en Azure Machine Learning para optimizar la comercialización internacional del vino DOP. La API estima el precio de exportación considerando país destino, hábitos de consumo y características de la DOP.
@@ -112,4 +102,3 @@ Se ha desarrollado una API en Azure Machine Learning para optimizar la comercial
 
 ---
 **CatamosVino** representa una herramienta innovadora para la industria vinícola, combinando datos, tecnología y análisis predictivo para potenciar la comercialización del vino español en mercados globales.
-
