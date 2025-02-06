@@ -475,7 +475,7 @@ with tab6:
     """)
 
 
-with tab7:
+with tab7: #PowerBI
     powerbi_utl = 'https://app.powerbi.com/view?r=eyJrIjoiOTZiOGIwMzItN2VlOC00YmQ5LTllYjItMTY2OTJjOTRhNDJkIiwidCI6IjhhZWJkZGI2LTM0MTgtNDNhMS1hMjU1LWI5NjQxODZlY2M2NCIsImMiOjl9&pageName=517520207b6e9083ca82'
     st.markdown(
         f"""
@@ -485,112 +485,102 @@ with tab7:
         """, unsafe_allow_html=True
     )
 
-with tab8:
+with tab8: #ML
 
  # Configurar la API de Azure ML
     URL = 'http://645d3dd2-f2ae-46c8-923c-605c1bb30cc7.westus2.azurecontainer.io/score'
     API_KEY = 'uqFnQy2rfrItFthgW6rqfESfvzMsl6iy'
 
 # Función para obtener predicción desde Azure ML
-def get_prediction(data):
-    body = str.encode(json.dumps(data))
-    headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + API_KEY}
-    req = urllib.request.Request(URL, body, headers)
+    def get_prediction(data):
+        body = str.encode(json.dumps(data))
+        headers = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + API_KEY}
+        req = urllib.request.Request(URL, body, headers)
 
-    try:
-        response = urllib.request.urlopen(req)
-        result = json.loads(response.read())
-        return result
-    except urllib.error.HTTPError as error:
-        st.error(f"❌ La solicitud falló con código de estado: {error.code}")
-        st.text(error.read().decode("utf8", 'ignore'))
-        return None
+        try:
+            response = urllib.request.urlopen(req)
+            result = json.loads(response.read())
+            return result
+        except urllib.error.HTTPError as error:
+            st.error(f"❌ La solicitud falló con código de estado: {error.code}")
+            st.text(error.read().decode("utf8", 'ignore'))
+            return None
 
 # Configuración de la aplicación Streamlit
-st.title("🍷 Predicción del Importe por Venta de Vino")
-st.write("Introduce los detalles de la venta para estimar el importe.")
+    st.title("🍷 Predicción del Importe por Venta de Vino")
+    st.write("Introduce los detalles de la venta para estimar el importe.")
 
 # Selección de DOPs
-DOPs = st.selectbox("📍 Denominación de Origen Protegida (DOPs)", ["Abadía Retuerta", "Abona", "Alella", "Alicante", "Almansa", "Arlanza", "Arribes", "Aylés", "Bierzo", "Binissalem",
-"Bolandin", "Bullas", "Calatayud", "Calzadilla", "Campo de Borja", "Campo de la Guardia", "Cangas", "Cariñena",
-"Casa del Blanco", "Cataluña", "Cava", "Cebreros", "Chacolí de Álava", "Chacolí de Bizkaia", "Chacolí de Getaria",
-"Chozas Carrascal", "Cigales", "Conca de Barberá", "Condado de Huelva", "Costers del Segre", "Dehesa del Carrizal",
-"Dehesa Peñalba", "Dominio de Valdepusa", "El Hierro", "El Terrerazo", "Empordà", "Finca Élez", "Gran Canaria",
-"Granada", "Guijoso", "Islas Canarias", "Jerez-Xérès-Sherry", "Jumilla", "La Gomera", "La Mancha", "La Palma",
-"Lanzarote", "Lebrija", "León", "Los Balagueses", "Málaga", "Manchuela", "Manzanilla S.B.", "Méntrida", "Mondéjar",
-"Monterrei", "Montilla-Moriles", "Montsant", "Navarra", "Pago de Arínzano", "Pago de Otazu", "Pago El Vicario",
-"Pago Florentino", "Pago La Jaraba", "Pago Los Cerrillos", "Pago Vallegarcía", "Penedés", "Pla de Bages",
-"Pla i Llevant", "Prado de Irache", "Priorat", "Rías Baixas", "Ribeira Sacra", "Ribeiro", "Ribera del Duero",
-"Ribera del Guadiana", "Ribera del Júcar", "Rioja", "Rueda", "Sierra de Salamanca", "Sierras de Málaga", "Somontano",
-"Tacoronte-Acentejo", "Tarragona", "Terra Alta", "Tierra del Vino de Zamora", "Toro", "Uclés", "Urueña",
-"Utiel-Requena", "Valdeorras", "Valdepeñas", "Valencia", "Valle de Güímar", "Valle de la Orotava", "Valles de Benavente",
-"Valtiendas", "Vera de Estenas", "Vinos de Madrid", "Ycoden-Daute-Isora", "Yecla"])
-Year = st.number_input("📆 Año de Venta", min_value=2000, max_value=2050, value=2025, step=1)
-cantidad_vino = st.number_input("🍷 Cantidad de vino a vender (en hectolitros)", min_value=1, max_value=1000000, step=1)
+    DOPs = st.selectbox("📍 Denominación de Origen Protegida (DOPs)", ["Abadía Retuerta", "Abona", "Alella", "Alicante", "Almansa", "Arlanza", "Arribes", "Aylés", "Bierzo", "Binissalem",
+    "Bolandin", "Bullas", "Calatayud", "Calzadilla", "Campo de Borja", "Campo de la Guardia", "Cangas", "Cariñena",
+    "Casa del Blanco", "Cataluña", "Cava", "Cebreros", "Chacolí de Álava", "Chacolí de Bizkaia", "Chacolí de Getaria",
+    "Chozas Carrascal", "Cigales", "Conca de Barberá", "Condado de Huelva", "Costers del Segre", "Dehesa del Carrizal",
+    "Dehesa Peñalba", "Dominio de Valdepusa", "El Hierro", "El Terrerazo", "Empordà", "Finca Élez", "Gran Canaria",
+    "Granada", "Guijoso", "Islas Canarias", "Jerez-Xérès-Sherry", "Jumilla", "La Gomera", "La Mancha", "La Palma",
+    "Lanzarote", "Lebrija", "León", "Los Balagueses", "Málaga", "Manchuela", "Manzanilla S.B.", "Méntrida", "Mondéjar",
+    "Monterrei", "Montilla-Moriles", "Montsant", "Navarra", "Pago de Arínzano", "Pago de Otazu", "Pago El Vicario",
+    "Pago Florentino", "Pago La Jaraba", "Pago Los Cerrillos", "Pago Vallegarcía", "Penedés", "Pla de Bages",
+    "Pla i Llevant", "Prado de Irache", "Priorat", "Rías Baixas", "Ribeira Sacra", "Ribeiro", "Ribera del Duero",
+    "Ribera del Guadiana", "Ribera del Júcar", "Rioja", "Rueda", "Sierra de Salamanca", "Sierras de Málaga", "Somontano",
+    "Tacoronte-Acentejo", "Tarragona", "Terra Alta", "Tierra del Vino de Zamora", "Toro", "Uclés", "Urueña",
+    "Utiel-Requena", "Valdeorras", "Valdepeñas", "Valencia", "Valle de Güímar", "Valle de la Orotava", "Valles de Benavente",
+    "Valtiendas", "Vera de Estenas", "Vinos de Madrid", "Ycoden-Daute-Isora", "Yecla"])
+    Year = st.number_input("📆 Año de Venta", min_value=2000, max_value=2050, value=2025, step=1)
+    cantidad_vino = st.number_input("🍷 Cantidad de vino a vender (en hectolitros)", min_value=1, max_value=1000000, step=1)
 
 # Lista de países a los que se puede vender
-countries = ["Alemania", "Austria", "Belgica", "Bulgaria", "Chipre", "Croacia", "Dinamarca", "Eslovaquia", "Eslovenia", "Estonia",
-             "Finlandia", "Francia", "Grecia", "Holanda", "Hungria", "Irlanda", "Italia", "Letonia", "Lituania", "Luxemburgo",
-             "Malta", "Polonia", "Portugal", "Republica_Checa", "Rumania", "Suecia", "Noruega", "Suiza", "Reino_Unido", "Rusia",
-             "Resto_Europa_no_E.U.", "Argentina", "Brasil", "Canada", "Colombia", "EE.UU.", "Mexico", "Venezuela", "Resto_America",
-             "Corea", "China", "India", "Japon", "Resto_Asia", "Australia", "Resto_Oceania", "Resto_Paises"]
+    countries = ["Alemania", "Austria", "Belgica", "Bulgaria", "Chipre", "Croacia", "Dinamarca", "Eslovaquia", "Eslovenia", "Estonia",
+                "Finlandia", "Francia", "Grecia", "Holanda", "Hungria", "Irlanda", "Italia", "Letonia", "Lituania", "Luxemburgo",
+                "Malta", "Polonia", "Portugal", "Republica_Checa", "Rumania", "Suecia", "Noruega", "Suiza", "Reino_Unido", "Rusia",
+                "Resto_Europa_no_E.U.", "Argentina", "Brasil", "Canada", "Colombia", "EE.UU.", "Mexico", "Venezuela", "Resto_America",
+                "Corea", "China", "India", "Japon", "Resto_Asia", "Australia", "Resto_Oceania", "Resto_Paises"]
 
-# Selección del país al que vender (puede elegir "No vender")
-country_selected = st.selectbox("🌍 ¿A qué país deseas vender?", countries)
+# Selección del país al que vender
+    country_selected = st.selectbox("🌍 ¿A qué país deseas vender?", countries)
 
 # Diccionario de países con valores iniciales en 0
-country_values = {country: 0 for country in countries}
+    country_values = {country: 0 for country in countries}
 
 # Si selecciona un país, se asigna la cantidad de vino a vender
-if country_selected != "No vender":
-    country_values[country_selected] = cantidad_vino
+    if country_selected != "No vender":
+        country_values[country_selected] = cantidad_vino
 
 # Lista de tipologías de vino
-wine_types = ["Blanco", "Rosado", "Tinto", "De_licor", "Espumoso", "De_aguja", "Otros"]
+    wine_types = ["Blanco", "Rosado", "Tinto", "De_licor", "Espumoso", "De_aguja", "Otros"]
 
 # Selección de tipología de vino
-wine_selected = st.selectbox("🍾 ¿Qué tipo de vino deseas vender?", wine_types)
+    wine_selected = st.selectbox("🍾 ¿Qué tipo de vino deseas vender?", wine_types)
 
 # Diccionario de tipos de vino con valores iniciales en 0
-wine_values = {wine: 0 for wine in wine_types}
-wine_values[wine_selected] = cantidad_vino  # Solo se activa el tipo de vino seleccionado
-
-# Agregar columnas faltantes en 0 (para que el modelo no falle)
-extra_columns = {
-    "Resto_Europa_no_E.U.": 0,
-    "Resto_America": 0,
-    "Resto_Asia": 0,
-    "Resto_Oceania": 0,
-    "Resto_Paises": 0
-}
+    wine_values = {wine: 0 for wine in wine_types}
+    wine_values[wine_selected] = cantidad_vino
 
 # Datos de la petición
-data = {
-    "Inputs": {
-        "data": [
-            {
-                "DOPs": DOPs,
-                "Year": Year,
-                **country_values,  # Se añaden los valores de países
-                **wine_values,  # Se añaden los valores de tipos de vino
-                # **extra_columns  # Se agregan las columnas que faltaban
-            }
-        ]
+    data = {
+        "Inputs": {
+            "data": [
+                {
+                    "DOPs": DOPs,
+                    "Year": Year,
+                    **country_values,
+                    **wine_values,
+                }
+            ]
+        }
     }
-}
 
 # Mostrar JSON antes de enviarlo (para depuración)
 # st.write("📤 JSON enviado a la API:", json.dumps(data, indent=4))
 
 # Botón de predicción
-if st.button("💰 Calcular Importe"):
-    result = get_prediction(data)
+    if st.button("💰 Calcular Importe"):
+        result = get_prediction(data)
 
-    if result and "Results" in result and isinstance(result["Results"], list) and len(result["Results"]) > 0:
-        importe = round(result["Results"][0], 2)  # Redondeamos a 2 decimales
-        st.success(f"💰 **Importe estimado:** {importe} € por la venta de {cantidad_vino} hectolitros de {wine_selected} de {DOPs} en {Year}, vendido a {country_selected}.")
-    else:
-        st.error("❌ La respuesta de la API no contiene datos válidos.")
+        if result and "Results" in result and isinstance(result["Results"], list) and len(result["Results"]) > 0:
+            importe = round(result["Results"][0], 2)  # Redondeamos a 2 decimales
+            st.success(f"💰 **Importe estimado:** {importe} € por la venta de {cantidad_vino} hectolitros de {wine_selected} de {DOPs} en {Year}, vendido a {country_selected}.")
+        else:
+            st.error("❌ La respuesta de la API no contiene datos válidos.")
 
 # Pie de página
 st.markdown("---")
