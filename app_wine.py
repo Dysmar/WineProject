@@ -599,7 +599,7 @@ with tab8: #ML
 
         if result and "Results" in result and isinstance(result["Results"], list) and len(result["Results"]) > 0:
             importe = round(result["Results"][0], 2)  # Redondeamos a 2 decimales
-            st.success(f"💰 **Importe estimado:** {importe} € por la venta de {cantidad_vino} hectolitros de {wine_selected} de {DOPs} en {Year}, vendido a {country_selected}.")
+            st.success(f"💰 **Importe estimado:** {importe} € por la venta de 1 hectolitros de {wine_selected} de {DOPs} en {Year}, vendido a {country_selected}.")
         else:
             st.error("❌ La respuesta de la API no contiene datos válidos.")
 
