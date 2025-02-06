@@ -1,12 +1,12 @@
 ![CatemosVino](https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/logo_catemosvino.png)
 
-# CatamosVino - Análisis y Predicción del Mercado Vinícola
+# CatemosVino - Análisis y Predicción del Mercado Vinícola
 
 ## Descripción del Proyecto
-CatamosVino es una solución analítica diseñada para optimizar la comercialización del vino español en mercados nacionales e internacionales. Utilizando herramientas de análisis de datos, inteligencia de negocios y modelos predictivos, este proyecto proporciona información estratégica basada en datos para mejorar la toma de decisiones en el sector vinícola.
+CatemosVino es una solución analítica diseñada para optimizar la comercialización del vino español en mercados nacionales e internacionales. Utilizando herramientas de análisis de datos, inteligencia de negocios y modelos predictivos, este proyecto proporciona información estratégica basada en datos para mejorar la toma de decisiones en el sector vinícola.
 
 ## Objetivo
-El objetivo principal de este proyecto es el desarrollo de una API llamada **"CatamosVino"**, que integra datos de diversas fuentes oficiales y proporciona insights clave sobre la evolución del mercado vinícola.
+El objetivo principal de este proyecto es el desarrollo de una API llamada **"CatemosVino"**, que integra datos de diversas fuentes oficiales y proporciona insights clave sobre la evolución del mercado vinícola.
 
 ## Funcionalidades Principales
 - **Integración de Datos:** Incorporación de información de la Organización Internacional de la Viña y el Vino (OIV) y del Instituto de Viticultores de España (INFOVI).
@@ -17,11 +17,11 @@ El objetivo principal de este proyecto es el desarrollo de una API llamada **"Ca
 
 ## Estructura del Repositorio
 ```
-CatamosVino/                  # Aplicación web en Streamlit
+CatemosVino/                  # Aplicación web en Streamlit
 │-- data/                    # Archivos de datos crudos y procesados
 │-- EDA/               # Jupyter Notebooks para análisis EDA y Machine Learning
 │-- PowerBI/              # Dashboards desarrollados en Power BI
-│-- ML/                     # Código de la API "CatamosVino"
+│-- ML/                     # Código de la API "CatemosVino"
 │-- README.md                # Documentación principal del repositorio
 ```
 
@@ -101,4 +101,4 @@ Se ha desarrollado una API en Azure Machine Learning para optimizar la comercial
    - Automatiza la toma de decisiones comerciales.
 
 ---
-**CatamosVino** representa una herramienta innovadora para la industria vinícola, combinando datos, tecnología y análisis predictivo para potenciar la comercialización del vino español en mercados globales.
+**CatemosVino** representa una herramienta innovadora para la industria vinícola, combinando datos, tecnología y análisis predictivo para potenciar la comercialización del vino español en mercados globales.
