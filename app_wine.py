@@ -487,6 +487,30 @@ with tab7: #PowerBI
 
 with tab8: #ML
 
+    image_ML = 'https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/ML_banner.png'
+    st.markdown(
+        f"""
+        <style>
+        .image-container {{
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }}
+        .image-container img {{
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }}
+
+        </style>
+        <div class="image-container">
+            <img src="{image_ML}" alt="ML de prediccion" title="ML de prediccion">
+        </div>
+        """, unsafe_allow_html=True
+    )
+
  # Configurar la API de Azure ML
     URL = 'http://645d3dd2-f2ae-46c8-923c-605c1bb30cc7.westus2.azurecontainer.io/score'
     API_KEY = 'uqFnQy2rfrItFthgW6rqfESfvzMsl6iy'
@@ -568,9 +592,6 @@ with tab8: #ML
             ]
         }
     }
-
-# Mostrar JSON antes de enviarlo (para depuración)
-# st.write("📤 JSON enviado a la API:", json.dumps(data, indent=4))
 
 # Botón de predicción
     if st.button("💰 Calcular Importe"):
