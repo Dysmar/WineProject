@@ -21,7 +21,7 @@ CatemosVino/                  # Aplicación web en Streamlit
 │-- data/                    # Archivos de datos crudos y procesados
 │-- EDA/               # Jupyter Notebooks para análisis EDA y Machine Learning
 │-- PowerBI/              # Dashboards desarrollados en Power BI
-│-- ML/                     # Código de la APP/EndPoint Azure "CatemosVino"
+│-- ML/                     # Datos para entrenar la APP/EndPoint Azure "CatemosVino"
 │-- README.md                # Documentación principal del repositorio
 ```
 
