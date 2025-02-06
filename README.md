@@ -101,4 +101,11 @@ Se ha desarrollado una APP/EndPoint Azure en Azure Machine Learning para optimiz
    - Automatiza la toma de decisiones comerciales.
 
 ---
+## Desarolladores:
+   - Dysmar Beatriz Vidal Romero
+   - Gino Ricci López
+   - Juan Pérez De Obanos Herrero
+   - Francesco Degl Innocenti
+
+---
 **CatemosVino** representa una herramienta innovadora para la industria vinícola, combinando datos, tecnología y análisis predictivo para potenciar la comercialización del vino español en mercados globales.
