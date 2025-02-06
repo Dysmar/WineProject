@@ -62,7 +62,7 @@ Para realizar el EDA, se han utilizado los siguientes archivos CSV:
 - Análisis de tendencias en la exportación por países con `sns.lineplot`.
 
 #### **EDA_export_definitivo.ipynb**
-- Importación y exploración de `df_expor_dop`.
+- Importación y exploración de `exportacion_spain`.
 - Transformación de datos con `melt()`.
 - Creación de visualizaciones en `sns.barplot` y `sns.heatmap`.
 - Generación de reportes en CSV con `to_csv()`.
