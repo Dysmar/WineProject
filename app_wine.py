@@ -487,6 +487,30 @@ with tab7: #PowerBI
 
 with tab8: #ML
 
+    image_ML = 'https://raw.githubusercontent.com/Xicu980/WineProject/refs/heads/main/data/img/ML_banner.png'
+    st.markdown(
+        f"""
+        <style>
+        .image-container {{
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }}
+        .image-container img {{
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }}
+
+        </style>
+        <div class="image-container">
+            <img src="{image_ML}" alt="ML de prediccion" title="ML de prediccion">
+        </div>
+        """, unsafe_allow_html=True
+    )
+
  # Configurar la API de Azure ML
     URL = 'http://645d3dd2-f2ae-46c8-923c-605c1bb30cc7.westus2.azurecontainer.io/score'
     API_KEY = 'uqFnQy2rfrItFthgW6rqfESfvzMsl6iy'
@@ -569,16 +593,13 @@ with tab8: #ML
         }
     }
 
-# Mostrar JSON antes de enviarlo (para depuración)
-# st.write("📤 JSON enviado a la API:", json.dumps(data, indent=4))
-
 # Botón de predicción
     if st.button("💰 Calcular Importe"):
         result = get_prediction(data)
 
         if result and "Results" in result and isinstance(result["Results"], list) and len(result["Results"]) > 0:
             importe = round(result["Results"][0], 2)  # Redondeamos a 2 decimales
-            st.success(f"💰 **Importe estimado:** {importe} € por la venta de {cantidad_vino} hectolitros de {wine_selected} de {DOPs} en {Year}, vendido a {country_selected}.")
+            st.success(f"💰 **Importe estimado:** {importe} € por la venta de 1 hectolitros de {wine_selected} de {DOPs} en {Year}, vendido a {country_selected}.")
         else:
             st.error("❌ La respuesta de la API no contiene datos válidos.")
 
